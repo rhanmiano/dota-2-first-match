@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  first-match:
+    container_name: first-match
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: node.dockerfile
+    ports: 
+      - 5000:5000
+      - 3010:3010
+    volumes:
+      - ./:/home/app
